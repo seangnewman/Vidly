@@ -209,12 +209,58 @@
     <Compile Include="Migrations\201804081553597_AddMembershipType.Designer.cs">
       <DependentUpon>201804081553597_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804081612103_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201804081612103_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201804081612103_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081641199_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201804081641199_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201804081641199_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081725264_AddMemberShipTypeName.cs" />
+    <Compile Include="Migrations\201804081725264_AddMemberShipTypeName.Designer.cs">
+      <DependentUpon>201804081725264_AddMemberShipTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081741529_AddMemberShipTypeNameAgain.cs" />
+    <Compile Include="Migrations\201804081741529_AddMemberShipTypeNameAgain.Designer.cs">
+      <DependentUpon>201804081741529_AddMemberShipTypeNameAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081749349_AddMemberShipTypeNameTryAgain.cs" />
+    <Compile Include="Migrations\201804081749349_AddMemberShipTypeNameTryAgain.Designer.cs">
+      <DependentUpon>201804081749349_AddMemberShipTypeNameTryAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081842073_AddMembershipTypeNameRequired.cs" />
+    <Compile Include="Migrations\201804081842073_AddMembershipTypeNameRequired.Designer.cs">
+      <DependentUpon>201804081842073_AddMembershipTypeNameRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804081855052_AddMembershipTypeSetColumnVAlues.cs" />
+    <Compile Include="Migrations\201804081855052_AddMembershipTypeSetColumnVAlues.Designer.cs">
+      <DependentUpon>201804081855052_AddMembershipTypeSetColumnVAlues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804082304562_AddDateofBirthNullable.cs" />
+    <Compile Include="Migrations\201804082304562_AddDateofBirthNullable.Designer.cs">
+      <DependentUpon>201804082304562_AddDateofBirthNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804082325328_updateMoviesTable.cs" />
+    <Compile Include="Migrations\201804082325328_updateMoviesTable.Designer.cs">
+      <DependentUpon>201804082325328_updateMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804110721228_genreTable.cs" />
+    <Compile Include="Migrations\201804110721228_genreTable.Designer.cs">
+      <DependentUpon>201804110721228_genreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804110740092_seedMovies.cs" />
+    <Compile Include="Migrations\201804110740092_seedMovies.Designer.cs">
+      <DependentUpon>201804110740092_seedMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\MemberShipTypeName.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -310,6 +356,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804081553597_AddMembershipType.resx">
       <DependentUpon>201804081553597_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081612103_PopulateMembershipTypes.resx">
+      <DependentUpon>201804081612103_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081641199_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201804081641199_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081725264_AddMemberShipTypeName.resx">
+      <DependentUpon>201804081725264_AddMemberShipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081741529_AddMemberShipTypeNameAgain.resx">
+      <DependentUpon>201804081741529_AddMemberShipTypeNameAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081749349_AddMemberShipTypeNameTryAgain.resx">
+      <DependentUpon>201804081749349_AddMemberShipTypeNameTryAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081842073_AddMembershipTypeNameRequired.resx">
+      <DependentUpon>201804081842073_AddMembershipTypeNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081855052_AddMembershipTypeSetColumnVAlues.resx">
+      <DependentUpon>201804081855052_AddMembershipTypeSetColumnVAlues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804082304562_AddDateofBirthNullable.resx">
+      <DependentUpon>201804082304562_AddDateofBirthNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804082325328_updateMoviesTable.resx">
+      <DependentUpon>201804082325328_updateMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804110721228_genreTable.resx">
+      <DependentUpon>201804110721228_genreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804110740092_seedMovies.resx">
+      <DependentUpon>201804110740092_seedMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

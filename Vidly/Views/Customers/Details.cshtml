@@ -5,4 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Name</h2>
+<h2>Customer Name :  @Model.Name</h2>
+
+<ul>
+    <li>Membership Frequency : @Model.MembershipType.Name</li>
+    @if(Model.DateOfBirth.HasValue)
+    {
+        <li>Date of Birth : @Model.DateOfBirth.Value.ToShortDateString()  </li>
+    }
+
+</ul>
+
+ 
+
+
+ 

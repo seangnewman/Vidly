@@ -13,38 +13,33 @@ namespace Vidly.ViewModels
         public IEnumerable<Genre> Genres { get; set; }
 
          
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
 
-
-        public Genre Genre { get; set; }
-
+ 
         [Required]
         [Display(Name = "Genre")]
-        public byte GenreId { get; set; }
+        public byte? GenreId { get; set; }
 
         [Required]
         [Display(Name = "Release Date")]
         public DateTime? ReleaseDate { get; set; }
 
-        [Required]
-        [Display(Name = "Date Added")]
-        public DateTime? DateAdded { get; set; }
 
-        [Required]
-        public int NumberInStock { get; set; }
+        [Required(ErrorMessage = "The Number in Stock must between 1 and 20.")]
+        [Range(1, 20)]
+        public int? NumberInStock { get; set; }
 
-
-        public Movie Movie { get; set; }
+        
         //Toggle the title between New and Save
         public string Title
         {
             get
             {
-                return (Movie != null && Movie.Id != 0) ? "Edit Movie" : "New Movie";
+                return (Id != 0) ? "Edit Movie" : "New Movie";
             }
         }
 
@@ -52,7 +47,7 @@ namespace Vidly.ViewModels
         {
             Id = 0;
         }
-
+         
 
         public NewMovieFormViewModel(Movie movie)
         {

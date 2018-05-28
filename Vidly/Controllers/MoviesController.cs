@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -20,6 +21,60 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
+
+        public ActionResult New(Movie movie)
+        {
+            var genre = _context.Genres.ToList();
+            var viewModel = new NewMovieFormViewModel(movie)
+            {
+                Genres = genre
+            };
+
+            return View("MovieForm", viewModel);
+        }
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewMovieFormViewModel(movie)
+                {
+                    Movie = movie, 
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MovieForm", viewModel);
+
+            }
+           
+
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                //New Movie Added
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+
+                /* Never Do This!  *** Opens security holes despite being Microsoft Preferred Solution */
+                //TryUpdateModel(customerInDb, new string[] {"Name,"Email");
+
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.DateAdded = movie.DateAdded;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                _context.SaveChanges();
+
+            }
+           
+
+
+            return RedirectToAction("Index", "Movies");
+        }
+
 
         public ViewResult Index()
         {
@@ -58,5 +113,29 @@ namespace Vidly.Controllers
 
             return View(viewModel);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new NewMovieFormViewModel(movie)
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("MovieForm", viewModel);
+
+        }
+
+
+
     }
+
+
 }

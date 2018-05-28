@@ -33,6 +33,7 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
 
@@ -52,6 +53,7 @@ namespace Vidly.Controllers
             {
                 movie.DateAdded = DateTime.Now;
                 //New Movie Added
+                
                 _context.Movies.Add(movie);
             }
             else
@@ -66,12 +68,12 @@ namespace Vidly.Controllers
                 movieInDb.ReleaseDate = movie.ReleaseDate;
                 movieInDb.DateAdded = movie.DateAdded;
                 movieInDb.NumberInStock = movie.NumberInStock;
-                _context.SaveChanges();
+                
 
             }
-           
 
 
+            _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
         }
 

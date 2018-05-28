@@ -285,6 +285,14 @@
     <Compile Include="Migrations\201805281056130_movies-validation-update.Designer.cs">
       <DependentUpon>201805281056130_movies-validation-update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805281650047_movie-validation.cs" />
+    <Compile Include="Migrations\201805281650047_movie-validation.Designer.cs">
+      <DependentUpon>201805281650047_movie-validation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805281715499_movie-val-correction.cs" />
+    <Compile Include="Migrations\201805281715499_movie-val-correction.Designer.cs">
+      <DependentUpon>201805281715499_movie-val-correction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -452,6 +460,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805281056130_movies-validation-update.resx">
       <DependentUpon>201805281056130_movies-validation-update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805281650047_movie-validation.resx">
+      <DependentUpon>201805281650047_movie-validation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805281715499_movie-val-correction.resx">
+      <DependentUpon>201805281715499_movie-val-correction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

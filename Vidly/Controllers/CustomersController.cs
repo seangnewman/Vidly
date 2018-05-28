@@ -36,6 +36,7 @@ namespace Vidly.Controllers
             return View("CustomerForm", viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
@@ -68,10 +69,10 @@ namespace Vidly.Controllers
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
                 customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
 
-                _context.SaveChanges();
+              
             }
-           
-           
+
+            _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
         }
         public ViewResult Index()

@@ -14,15 +14,17 @@ namespace Vidly.Models
 
  
         [Required(ErrorMessage = "Please enter movie name.")]
+        [StringLength(255)]
         public string Name { get; set; }
 
         
         public Genre Genre { get; set; }
 
+        [Required(ErrorMessage = "Genre  is  a required field")]
         [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
-        
+        [Required(ErrorMessage = "Please enter the release date.")]
         [Display(Name = "Release Date")]
         public DateTime? ReleaseDate { get; set; }
 
@@ -30,7 +32,7 @@ namespace Vidly.Models
         [Display(Name = "Date Added")]
         public DateTime? DateAdded { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The Number in Stock must between 1 and 20.")]
         [Range(1, 20)]
         public int NumberInStock { get; set; }
 
